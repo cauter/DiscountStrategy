@@ -3,12 +3,12 @@ package discountstrategy;
 /**
  *
  * @author Cody Auter @course Adv. Java 152 - 135
- * @version 1.0
+ * @version 1.5
  */
 public class CashRegister
 {
     //Properties
-    private Receipt invoice;
+    private Invoice invoice;
     private double totalSales;
 
     //Constructor

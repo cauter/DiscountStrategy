@@ -6,9 +6,9 @@ import java.text.NumberFormat;
  *
  * @author Cody Auter 
  * @course Adv. Java 152 - 135
- * @version 1.5
+ * @version 2.0
  */
-public class LineItem
+public class LineItem implements ReceiptItem
 {
     //Properties
     //'has a' Product
@@ -36,11 +36,13 @@ public class LineItem
     }
 
     //Methods
+    @Override
     public double getLineTotal()
     {
         return product.calculatePrice(quantity);
     }
 
+    @Override
     public String getItemInfo()
     {
         String s = product.getId() + ":  " + product.getName() + "\n"
@@ -65,22 +67,26 @@ public class LineItem
     }
 
     //Setters
+    @Override
     public final void setProduct(Product product)
     {
         this.product = product;
     }
 
+    @Override
     public final void setQuantity(double quantity)
     {
         this.quantity = quantity;
     }
 
     //Getters
+    @Override
     public Product getProduct()
     {
         return product;
     }
 
+    @Override
     public double getQuantity()
     {
         return quantity;

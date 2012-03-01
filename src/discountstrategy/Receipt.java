@@ -11,9 +11,8 @@ import java.text.NumberFormat;
 public class Receipt implements Invoice
 {
     //Properties
-
     private Customer customer;
-    private LineItem[] lineItems;
+    private ReceiptItem[] items;
     private NumberFormat nf = NumberFormat.getCurrencyInstance();
     //Customer Database
     private Customer[] customerDB =
@@ -27,7 +26,7 @@ public class Receipt implements Invoice
     public Receipt(String customerID)
     {
         customer = findCustomer(customerID);
-        lineItems = new LineItem[0];
+        items = new LineItem[0];
     }
 
     //Methods
@@ -39,9 +38,9 @@ public class Receipt implements Invoice
         double salesTaxRate = 0;
 
         //Cycle through array to get subTotals for each item.
-        for (int i = 0; i < lineItems.length; i++)
+        for (int i = 0; i < items.length; i++)
         {
-            subTotal += lineItems[i].getLineTotal();
+            subTotal += items[i].getLineTotal();
         }
 
         return subTotal * (1 + salesTaxRate);
@@ -57,9 +56,9 @@ public class Receipt implements Invoice
 
         //loop through array and print each lineItem
         String itemInfo = "";
-        for (int i = 0; i < lineItems.length; i++)
+        for (int i = 0; i < items.length; i++)
         {
-            itemInfo = itemInfo + lineItems[i].getItemInfo() + "\n";
+            itemInfo = itemInfo + items[i].getItemInfo() + "\n";
         }
 
         //display final total
@@ -76,20 +75,20 @@ public class Receipt implements Invoice
     public final void addItem(String productID, int amount)
     {
         //Create LineItem object
-        LineItem newItem = new LineItem(productID, amount);
+        ReceiptItem newItem = new LineItem(productID, amount);
 
         //Create temp array for resize
-        LineItem[] temp = new LineItem[lineItems.length + 1];
+        ReceiptItem[] temp = new LineItem[items.length + 1];
         //Copy current array
-        for (int i = 0; i < lineItems.length; i++)
+        for (int i = 0; i < items.length; i++)
         {
-            temp[i] = lineItems[i];
+            temp[i] = items[i];
         }
         //Add new item in
         temp[temp.length - 1] = newItem;
 
         //Finalize transfer
-        lineItems = temp;
+        items = temp;
     }
 
     //Find customer by looping for id
