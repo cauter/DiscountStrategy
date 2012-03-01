@@ -4,7 +4,7 @@ package discountstrategy;
  *
  * @author Cody Auter 
  * @course Adv. Java 152 - 135
- * @version 1.0
+ * @version 2.0
  */
 public interface Product
 {

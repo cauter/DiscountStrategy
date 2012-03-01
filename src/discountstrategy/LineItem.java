@@ -6,7 +6,7 @@ import java.text.NumberFormat;
  *
  * @author Cody Auter 
  * @course Adv. Java 152 - 135
- * @version 1.0
+ * @version 1.5
  */
 public class LineItem
 {

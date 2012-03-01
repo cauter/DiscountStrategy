@@ -8,7 +8,7 @@ import java.text.NumberFormat;
  * @course Adv. Java 152 - 135
  * @version 1.0
  */
-public class Receipt
+public class Receipt implements Invoice
 {
     //Properties
 
@@ -31,6 +31,7 @@ public class Receipt
     }
 
     //Methods
+    @Override
     public final double getTotal()
     {
         //Variables to handle calculations
@@ -47,6 +48,7 @@ public class Receipt
     }
 
     //Display method (ToString) - Put in Register?
+    @Override
     public final String getReceiptInfo()
     {
         //Store info
@@ -70,6 +72,7 @@ public class Receipt
     }
 
     //Add items to receipt (create a new array)
+    @Override
     public final void addItem(String productID, int amount)
     {
         //Create LineItem object
