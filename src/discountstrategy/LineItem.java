@@ -19,12 +19,12 @@ public class LineItem
     //Product Database
     private Product[] productDB =
     {
-        new Product("ME987", "Raiders of the Lost Ark - DVD", 24.95,
+        new ElectronicProduct("ME987", "Raiders of the Lost Ark - DVD", 24.95,
                     new HalfOffDiscount()),
-        new Product("TV060", "Sony Bravia 1080p - 55\"", 3200,
+        new ElectronicProduct("TV060", "Sony Bravia 1080p - 55\"", 3200,
                     new UsedItemDiscount(.1)),
-        new Product("GM115", "Mass Effect 3 - X360", 59.95, new NoDiscount()),
-        new Product("GM001", "X360 Wireless Controller", 19.99,
+        new ElectronicProduct("GM115", "Mass Effect 3 - X360", 59.95, new NoDiscount()),
+        new ElectronicProduct("GM001", "X360 Wireless Controller", 19.99,
                     new UsedItemDiscount(.15))
     };
 

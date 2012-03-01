@@ -6,82 +6,29 @@ package discountstrategy;
  * @course Adv. Java 152 - 135
  * @version 1.0
  */
-public class Product
+public interface Product
 {
-    //Properties
-
-    private DiscountStrategy discount;
-    private String description;
-    private String name;
-    private String id;
-    private double cost;
-
-    //Constructor
-    public Product(String productID, String productName, double cost,
-                   DiscountStrategy discount)
-    {
-        setId(productID);
-        setName(productName);
-        setCost(cost);
-        setDiscount(discount);
-        setDescription(productName);
-    }
-
     //Methods
-    public double calculatePrice(double quantity)
-    {
-        return discount.calculateDiscount(cost) * quantity;
-    }
+    public abstract double calculatePrice(double quantity);
 
     //Setters
-    public final void setCost(double cost)
-    {
-        this.cost = cost;
-    }
+    public abstract void setCost(double cost);
 
-    public final void setDescription(String description)
-    {
-        this.description = description;
-    }
+    public abstract void setDescription(String description);
 
-    public final void setDiscount(DiscountStrategy discount)
-    {
-        this.discount = discount;
-    }
+    public abstract void setDiscount(DiscountStrategy discount);
 
-    public final void setId(String id)
-    {
-        this.id = id;
-    }
+    public abstract void setId(String id);
 
-    public final void setName(String name)
-    {
-        this.name = name;
-    }
-
+    public abstract void setName(String name);
     //Getters
-    public double getCost()
-    {
-        return cost;
-    }
+    public abstract double getCost();
 
-    public String getDescription()
-    {
-        return description;
-    }
+    public abstract String getDescription();
 
-    public DiscountStrategy getDiscount()
-    {
-        return discount;
-    }
+    public abstract DiscountStrategy getDiscount();
 
-    public String getId()
-    {
-        return id;
-    }
+    public abstract String getId();
 
-    public String getName()
-    {
-        return name;
-    }
+    public abstract String getName();
 }
